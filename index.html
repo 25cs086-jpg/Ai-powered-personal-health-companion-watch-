@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08111f">
+<title>AI Health Companion Watch</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">HACKATHON PROTOTYPE</div>
+      <h1>AI Health Companion</h1>
+      <p>Smart watch • Health • Safety • Emergency</p>
+    </div>
+    <div class="status"><span class="dot"></span> SYSTEM ONLINE</div>
+  </header>
+
+  <main class="grid">
+    <section class="hero card">
+      <div class="hero-copy">
+        <span class="pill">AI-POWERED PERSONAL SAFETY</span>
+        <h2>Your health. Your safety. <span>One companion.</span></h2>
+        <p>Continuous health monitoring, fall detection, women’s safety SOS, location sharing and emergency escalation — designed as a single wearable companion.</p>
+        <div class="actions">
+          <button class="primary" id="sosBtn">🚨 SOS EMERGENCY</button>
+          <button class="secondary" id="fallBtn">Simulate Fall</button>
+        </div>
+        <div class="mini-row">
+          <span>✓ Fall detection</span><span>✓ Guardian alerts</span><span>✓ Location sharing</span>
+        </div>
+      </div>
+      <div class="watch-stage" aria-label="watch prototype">
+        <div class="watch">
+          <div class="strap top"></div>
+          <div class="watch-case">
+            <div class="screen">
+              <div class="screen-top"><span>09:41</span><span>♥ 72</span></div>
+              <div class="watch-title">HEALTH+</div>
+              <div class="heart">♥</div>
+              <div class="bpm">72 <small>BPM</small></div>
+              <div class="watch-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="watch-bottom"><span>98% SpO₂</span><span>24°C</span></div>
+            </div>
+            <div class="crown"></div>
+          </div>
+          <div class="strap bottom"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics">
+      <div class="metric card"><span>❤️ Heart Rate</span><strong id="hr">72</strong><small>BPM • Normal</small></div>
+      <div class="metric card"><span>🫁 SpO₂</span><strong id="spo2">98%</strong><small>Blood oxygen</small></div>
+      <div class="metric card"><span>🚶 Steps</span><strong id="steps">6,842</strong><small>Today</small></div>
+      <div class="metric card"><span>🔋 Battery</span><strong>86%</strong><small>Estimated 2.4 days</small></div>
+    </section>
+
+    <section class="card feature-card">
+      <div class="section-head"><div><span class="eyebrow">SAFETY ENGINE</span><h3>Protection modes</h3></div><span class="live">LIVE DEMO</span></div>
+      <div class="feature-grid">
+        <button class="feature" id="womenBtn"><b>🛡️ Women’s Safety</b><span>Long-press SOS • silent alert • live location</span></button>
+        <button class="feature" id="fallBtn2"><b>⚠️ Fall Detection</b><span>Impact detected → countdown → guardian alert</span></button>
+        <button class="feature" id="locBtn"><b>📍 Live Location</b><span>Share current location with trusted contacts</span></button>
+        <button class="feature" id="callBtn"><b>📞 Emergency Call</b><span>Open emergency dialer / guardian call</span></button>
+      </div>
+    </section>
+
+    <section class="card health-card">
+      <div class="section-head"><div><span class="eyebrow">AI HEALTH</span><h3>Today’s insight</h3></div><span class="badge">AI</span></div>
+      <div class="insight">
+        <div class="pulse-icon">✦</div>
+        <div><b>Vitals look stable</b><p>Your simulated heart rate and SpO₂ are currently within the normal demo range. Keep hydrated and take a short movement break.</p></div>
+      </div>
+      <div class="health-list">
+        <div><span>Sleep</span><b>7h 24m</b><em>Good</em></div>
+        <div><span>Activity</span><b>6.8k steps</b><em>72% goal</em></div>
+        <div><span>Stress</span><b>Low</b><em>AI estimate</em></div>
+      </div>
+    </section>
+
+    <section class="card contacts-card">
+      <div class="section-head"><div><span class="eyebrow">TRUSTED CIRCLE</span><h3>Emergency contacts</h3></div><button class="tiny" id="saveContact">Save</button></div>
+      <label>Guardian phone / WhatsApp number</label>
+      <input id="guardian" placeholder="+91XXXXXXXXXX" inputmode="tel">
+      <div class="contact-actions">
+        <button class="secondary full" id="waBtn">WhatsApp Guardian</button>
+        <button class="secondary full" id="smsBtn">SMS Guardian</button>
+      </div>
+    </section>
+
+    <section class="card timeline">
+      <div class="section-head"><div><span class="eyebrow">EVENT LOG</span><h3>Recent safety events</h3></div></div>
+      <div id="events">
+        <div class="event"><span class="event-dot ok"></span><div><b>Health monitoring active</b><small>Just now</small></div><em>✓</em></div>
+        <div class="event"><span class="event-dot"></span><div><b>Guardian connection ready</b><small>2 min ago</small></div><em>•</em></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Prototype for hackathon demonstration • ESP32 + MPU6050 + MAX30102 concept • GitHub Pages</footer>
+</div>
+
+<div class="modal hidden" id="modal">
+  <div class="modal-box">
+    <div class="modal-icon" id="modalIcon">🚨</div>
+    <h2 id="modalTitle">Emergency Alert</h2>
+    <p id="modalText">Alert flow started.</p>
+    <div class="count" id="count">10</div>
+    <div class="modal-actions">
+      <button class="primary" id="okBtn">I'M OK</button>
+      <button class="danger" id="sendBtn">SEND ALERT NOW</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
